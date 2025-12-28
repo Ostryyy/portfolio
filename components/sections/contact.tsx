@@ -29,8 +29,6 @@ export function ContactSection() {
               </div>
               <Textarea placeholder="Wiadomość" className="min-h-[140px]" />
               <Button className="w-full md:w-auto">Wyślij</Button>
-
-              <p className="text-xs text-muted-foreground">...</p>
             </CardContent>
           </Card>
         </Reveal>

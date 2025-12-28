@@ -1,7 +1,7 @@
 import { Reveal } from "@/components/animations/reveal";
-import { Badge } from "@/components/ui/badge";
+import { TechMarquee } from "@/components/animations/marquee";
 
-const tech = [
+const techRow1 = [
   "Angular",
   "RxJS",
   "NgRx",
@@ -11,9 +11,18 @@ const tech = [
   "TypeScript",
   "Tailwind",
   "shadcn/ui",
+];
+
+const techRow2 = [
   "Node.js",
-  "REST",
+  "REST APIs",
   "SSE",
+  "Performance",
+  "UX/UI",
+  "Testing",
+  "CI/CD",
+  "Git",
+  "Clean Code",
 ];
 
 export function TechSection() {
@@ -25,20 +34,20 @@ export function TechSection() {
             Tech Stack
           </h2>
           <p className="mt-3 max-w-2xl text-muted-foreground">
-            Technologie, w których czuję się pewnie i które realnie dowożę w
-            projektach.
+            Dynamicznie, nowocześnie i czytelnie — bez nudnych statycznych
+            ikonek.
           </p>
         </Reveal>
 
-        <Reveal delay={0.05}>
-          <div className="mt-8 flex flex-wrap gap-2">
-            {tech.map((t) => (
-              <Badge key={t} variant="secondary">
-                {t}
-              </Badge>
-            ))}
-          </div>
-        </Reveal>
+        <div className="mt-10 space-y-4">
+          <Reveal delay={0.05}>
+            <TechMarquee items={techRow1} />
+          </Reveal>
+
+          <Reveal delay={0.08}>
+            <TechMarquee items={techRow2} reverse />
+          </Reveal>
+        </div>
       </div>
     </section>
   );
