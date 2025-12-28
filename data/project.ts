@@ -35,6 +35,12 @@ export const projects: Project[] = [
       "Docker",
     ],
     repoUrl: "https://github.com/Ostryyy/briefly-ai",
+    screenshots: [
+      "/projects/briefly-ai/starting.jpg",
+      "/projects/briefly-ai/processing-status-SUMMARIZING.jpg",
+      "/projects/briefly-ai/processing-status-ready.jpg",
+      "/projects/briefly-ai/summary.jpg",
+    ],
   },
 
   {

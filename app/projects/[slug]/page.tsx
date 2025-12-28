@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { YouTubeEmbed } from "@/components/media/youtube-embed";
 import type { Metadata } from "next";
 import { projects, getProjectBySlug } from "@/data/project";
+import { ScreenshotGallery } from "@/components/projects/screenshot-gallery";
 
 type Params = { slug: string };
 
@@ -47,7 +47,7 @@ export async function generateStaticParams() {
 }
 
 type Props = {
-  params: Promise<{ slug: string }>;
+  params: Promise<Params>;
 };
 
 export default async function ProjectDetailsPage({ params }: Props) {
@@ -66,6 +66,8 @@ export default async function ProjectDetailsPage({ params }: Props) {
     ...(project.cover ? [project.cover] : []),
     ...screenshots,
   ].filter((v, i, arr) => arr.indexOf(v) === i);
+
+  const hasScreenshots = gallery.length > 0;
 
   return (
     <main className="min-h-screen">
@@ -100,18 +102,16 @@ export default async function ProjectDetailsPage({ params }: Props) {
                   </a>
                 </Button>
               ) : null}
-              {project.repoUrl &&
-              project.screenshots &&
-              project.screenshots.length > 0 ? (
+
+              {project.repoUrl ? (
                 <Button asChild variant="outline">
                   <a href={project.repoUrl} target="_blank" rel="noreferrer">
                     Repo
                   </a>
                 </Button>
               ) : null}
-              {!project.youtubeId &&
-              project.screenshots &&
-              project.screenshots.length > 0 ? (
+
+              {!project.youtubeId && hasScreenshots ? (
                 <Button asChild variant="secondary">
                   <a href="#screenshots">Screenshots</a>
                 </Button>
@@ -134,31 +134,16 @@ export default async function ProjectDetailsPage({ params }: Props) {
               />
             </div>
           </section>
-        ) : gallery.length ? (
+        ) : hasScreenshots ? (
           <section id="screenshots" className="mt-12">
             <h2 className="text-xl font-semibold">Screenshots</h2>
             <p className="mt-2 text-sm text-muted-foreground">
-              UI snapshots showing the main flows and features.
+              UI snapshots showing the main flows and features. Click to
+              enlarge.
             </p>
 
-            <div className="mt-6 grid gap-6 md:grid-cols-2">
-              {gallery.map((src) => (
-                <div
-                  key={src}
-                  className="overflow-hidden rounded-2xl border bg-muted/20"
-                >
-                  <div className="relative aspect-video">
-                    <Image
-                      src={src}
-                      alt={`${project.title} screenshot`}
-                      fill
-                      className="object-cover"
-                      sizes="(min-width: 768px) 50vw, 100vw"
-                      priority={src === gallery[0]}
-                    />
-                  </div>
-                </div>
-              ))}
+            <div className="mt-6">
+              <ScreenshotGallery title={project.title} images={gallery} />
             </div>
           </section>
         ) : (
