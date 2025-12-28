@@ -8,6 +8,7 @@ export type Project = {
   liveUrl?: string;
   repoUrl?: string;
   youtubeId?: string;
+  screenshots?: string[];
 };
 
 export const projects: Project[] = [
