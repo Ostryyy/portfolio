@@ -64,6 +64,14 @@ export const projects: Project[] = [
       "Docker Compose",
     ],
     repoUrl: "https://github.com/Ostryyy/ecommerce",
+    screenshots: [
+      "/projects/e-commerce/home.jpg",
+      "/projects/e-commerce/shop.jpg",
+      "/projects/e-commerce/cart.jpg",
+      "/projects/e-commerce/checkout.jpg",
+      "/projects/e-commerce/confirmation.jpg",
+      "/projects/e-commerce/summary.jpg",
+    ],
   },
 
   {
