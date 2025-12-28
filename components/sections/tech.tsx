@@ -27,7 +27,7 @@ const techRow2 = [
 
 export function TechSection() {
   return (
-    <section id="tech" className="border-t">
+    <section id="tech" className="scroll-mt-24 border-t">
       <div className="mx-auto max-w-6xl px-6 py-16">
         <Reveal>
           <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">

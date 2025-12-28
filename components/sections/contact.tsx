@@ -3,7 +3,7 @@ import { ContactCard } from "@/components/contact/contact-card";
 
 export function ContactSection() {
   return (
-    <section id="contact" className="border-t">
+    <section id="contact" className="scroll-mt-24 border-t">
       <div className="mx-auto max-w-6xl px-6 py-16">
         <Reveal>
           <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">

@@ -6,6 +6,7 @@ import { ContactSection } from "@/components/sections/contact";
 export default function Home() {
   return (
     <main>
+      <div id="top" />
       <Hero />
       <TechSection />
       <ProjectsPreview />

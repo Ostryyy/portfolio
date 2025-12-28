@@ -7,7 +7,7 @@ import { GlowWrapper } from "@/components/projects/glow-wrapper";
 
 export function ProjectsPreview() {
   return (
-    <section id="projects" className="border-t">
+    <section id="projects" className="scroll-mt-24 border-t">
       <div className="mx-auto max-w-6xl px-6 py-16">
         <Reveal>
           <div className="flex items-end justify-between gap-4">
