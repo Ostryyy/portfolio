@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -16,11 +17,15 @@ export default function Home() {
           Frontend Developer
         </h1>
         <p className="mt-4 max-w-2xl text-muted-foreground md:text-lg">
-          Portfolio z nowoczesnym UI, animacjami i stronami projektów + filmami z YouTube.
+          Portfolio z nowoczesnym UI, animacjami i stronami projektów + filmami
+          z YouTube.
         </p>
 
         <div className="mt-8 flex gap-3">
-          <Button>Zobacz projekty</Button>
+          <Button asChild>
+            <Link href="/projects">Zobacz projekty</Link>
+          </Button>
+
           <Button variant="outline">Kontakt</Button>
         </div>
 
@@ -29,7 +34,8 @@ export default function Home() {
             <CardTitle>Test shadcn/ui ✅</CardTitle>
           </CardHeader>
           <CardContent className="text-muted-foreground">
-            Jeśli widzisz kartę i przyciski w ładnym dark theme — wszystko działa.
+            Jeśli widzisz kartę i przyciski w ładnym dark theme — wszystko
+            działa.
           </CardContent>
         </Card>
       </div>
