@@ -1,12 +1,11 @@
 import Link from "next/link";
 import { projects } from "@/data/project";
-import { ProjectGrid } from "@/components/projects/project-grid";
 import { Reveal } from "@/components/animations/reveal";
 import { Button } from "@/components/ui/button";
+import { ProjectsBentoGrid } from "@/components/projects/bento-grid";
+import { GlowWrapper } from "@/components/projects/glow-wrapper";
 
 export function ProjectsPreview() {
-  const top = projects.slice(0, 3);
-
   return (
     <section id="projects" className="border-t">
       <div className="mx-auto max-w-6xl px-6 py-16">
@@ -17,8 +16,7 @@ export function ProjectsPreview() {
                 Projekty
               </h2>
               <p className="mt-3 max-w-2xl text-muted-foreground">
-                Kilka najważniejszych projektów. Każdy ma stronę z filmem demo
-                na YouTube.
+                Kafelki bento + każdy projekt ma stronę z demo na YouTube.
               </p>
             </div>
 
@@ -29,7 +27,9 @@ export function ProjectsPreview() {
         </Reveal>
 
         <div className="mt-10">
-          <ProjectGrid projects={top} />
+          <GlowWrapper>
+            <ProjectsBentoGrid projects={projects} />
+          </GlowWrapper>
         </div>
 
         <div className="mt-8 md:hidden">
