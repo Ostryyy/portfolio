@@ -1,8 +1,5 @@
 import { Reveal } from "@/components/animations/reveal";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { ContactCard } from "@/components/contact/contact-card";
 
 export function ContactSection() {
   return (
@@ -13,25 +10,19 @@ export function ContactSection() {
             Kontakt
           </h2>
           <p className="mt-3 max-w-2xl text-muted-foreground">
-            Napisz do mnie — odpowiem szybko.
+            Najszybciej złapiesz mnie mailowo — albo przez GitHub/LinkedIn.
           </p>
         </Reveal>
 
-        <Reveal delay={0.05}>
-          <Card className="mt-10">
-            <CardHeader>
-              <CardTitle>Wyślij wiadomość</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="grid gap-4 md:grid-cols-2">
-                <Input placeholder="Imię" />
-                <Input placeholder="E-mail" type="email" />
-              </div>
-              <Textarea placeholder="Wiadomość" className="min-h-[140px]" />
-              <Button className="w-full md:w-auto">Wyślij</Button>
-            </CardContent>
-          </Card>
-        </Reveal>
+        <div className="mt-10 max-w-2xl">
+          <Reveal delay={0.05}>
+            <ContactCard
+              email="twojemail@example.com"
+              githubUrl="https://github.com/twojprofil"
+              linkedinUrl="https://www.linkedin.com/in/twojprofil/"
+            />
+          </Reveal>
+        </div>
       </div>
     </section>
   );
