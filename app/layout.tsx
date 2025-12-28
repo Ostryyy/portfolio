@@ -3,6 +3,7 @@ import { Navbar } from "@/components/site/navbar";
 import { Footer } from "@/components/site/footer";
 import { Toaster } from "sonner";
 import { Geist, Geist_Mono } from "next/font/google";
+import { HashScroll } from "@/components/site/hash-scroll";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -45,6 +46,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >
         <Navbar />
+        <HashScroll />
         {children}
         <Footer />
         <Toaster richColors position="top-right" />

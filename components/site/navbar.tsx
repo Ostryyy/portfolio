@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import * as React from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -12,6 +13,7 @@ const links = [
 ];
 
 export function Navbar() {
+  const pathname = usePathname();
   const [active, setActive] = React.useState<string>("");
   const [hideOnFooter, setHideOnFooter] = React.useState(false);
 
@@ -80,20 +82,34 @@ export function Navbar() {
         </Link>
 
         <nav className="hidden items-center gap-6 text-sm md:flex">
-          {links.map((l) => (
-            <a
-              key={l.id}
-              href={`#${l.id}`}
-              className={cn(
-                "transition",
-                active === l.id
-                  ? "text-foreground"
-                  : "text-muted-foreground hover:text-foreground"
-              )}
-            >
-              {l.label}
-            </a>
-          ))}
+          {links.map((l) => {
+            const href = pathname === "/" ? `#${l.id}` : `/#${l.id}`;
+
+            return (
+              <a
+                key={l.id}
+                href={href}
+                onClick={(e) => {
+                  if (pathname === "/") {
+                    e.preventDefault();
+                    const el = document.getElementById(l.id);
+                    if (!el) return;
+                    const top =
+                      el.getBoundingClientRect().top + window.scrollY - 80;
+                    window.scrollTo({ top, behavior: "smooth" });
+                  }
+                }}
+                className={cn(
+                  "transition",
+                  active === l.id
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                )}
+              >
+                {l.label}
+              </a>
+            );
+          })}
         </nav>
 
         <div className="flex items-center gap-2">

@@ -16,12 +16,6 @@ export function Footer() {
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
-            <Button asChild variant="ghost">
-              <Link href="/projects">Projekty</Link>
-            </Button>
-            <Button asChild variant="ghost">
-              <a href="#contact">Kontakt</a>
-            </Button>
             <Button asChild variant="outline">
               <a href="#top">Back to top</a>
             </Button>
