@@ -3,7 +3,41 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { YouTubeEmbed } from "@/components/media/youtube-embed";
-import { getProjectBySlug } from "@/data/project";
+import type { Metadata } from "next";
+import { projects, getProjectBySlug } from "@/data/project";
+
+type Params = { slug: string };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<Params>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
+
+  if (!project) {
+    return {
+      title: "Projekt nie znaleziony",
+      description: "Nie znaleziono projektu.",
+    };
+  }
+
+  return {
+    title: project.title,
+    description: project.short,
+    openGraph: {
+      title: project.title,
+      description: project.short,
+      type: "article",
+      images: project.cover ? [{ url: project.cover }] : undefined,
+    },
+  };
+}
+
+export async function generateStaticParams() {
+  return projects.map((p) => ({ slug: p.slug }));
+}
 
 type Props = {
   params: Promise<{ slug: string }>;

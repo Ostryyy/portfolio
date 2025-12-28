@@ -14,8 +14,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Arkadiusz Ostrowski — Software Engineer",
-  description: "Software Engineer - Python & Cloud | Data Science & GenAI",
+  metadataBase: new URL("http://localhost:3000"),
+  title: {
+    default: "Arkadiusz — Frontend Developer",
+    template: "%s | Arkadiusz",
+  },
+  description: "Frontend Developer: Angular • React • Next.js • TypeScript",
+  openGraph: {
+    title: "Arkadiusz — Frontend Developer",
+    description: "Portfolio: projekty, demo na YouTube, tech stack.",
+    type: "website",
+    url: "http://localhost:3000",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
