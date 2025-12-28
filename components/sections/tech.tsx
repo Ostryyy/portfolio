@@ -25,6 +25,18 @@ const techRow2 = [
   "Clean Code",
 ];
 
+const techRow3 = [
+  "Python",
+  "FastAPI",
+  "scikit-learn",
+  "MLflow",
+  "Docker",
+  "MongoDB",
+  "SQL",
+  "Pandas",
+  "NumPy",
+];
+
 export function TechSection() {
   return (
     <section id="tech" className="scroll-mt-24 border-t">
@@ -34,8 +46,7 @@ export function TechSection() {
             Tech Stack
           </h2>
           <p className="mt-3 max-w-2xl text-muted-foreground">
-            Dynamicznie, nowocześnie i czytelnie — bez nudnych statycznych
-            ikonek.
+            A practical mix for frontend, full-stack work, and AI/ML projects.
           </p>
         </Reveal>
 
@@ -46,6 +57,10 @@ export function TechSection() {
 
           <Reveal delay={0.08}>
             <TechMarquee items={techRow2} reverse />
+          </Reveal>
+
+          <Reveal delay={0.11}>
+            <TechMarquee items={techRow3} />
           </Reveal>
         </div>
       </div>

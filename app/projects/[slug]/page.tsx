@@ -18,8 +18,8 @@ export async function generateMetadata({
 
   if (!project) {
     return {
-      title: "Projekt nie znaleziony",
-      description: "Nie znaleziono projektu.",
+      title: "Project not found",
+      description: "The requested project could not be found.",
     };
   }
 
@@ -56,7 +56,7 @@ export default async function ProjectDetailsPage({ params }: Props) {
           href="/projects"
           className="text-sm text-muted-foreground hover:underline"
         >
-          ← Wróć do listy
+          ← Back to projects
         </Link>
 
         <div className="mt-6 flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
@@ -97,7 +97,7 @@ export default async function ProjectDetailsPage({ params }: Props) {
           <div className="mt-10">
             <h2 className="text-xl font-semibold">Demo (YouTube)</h2>
             <p className="mt-2 text-sm text-muted-foreground">
-              Tutaj wideo, gdzie przedstawiasz projekt.
+              A short walkthrough / demo video.
             </p>
 
             <div className="mt-6">

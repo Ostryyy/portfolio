@@ -1,5 +1,6 @@
 import { Reveal } from "@/components/animations/reveal";
 import { ContactCard } from "@/components/contact/contact-card";
+import { profile } from "@/data/profile";
 
 export function ContactSection() {
   return (
@@ -7,19 +8,19 @@ export function ContactSection() {
       <div className="mx-auto max-w-6xl px-6 py-16">
         <Reveal>
           <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
-            Kontakt
+            Contact
           </h2>
           <p className="mt-3 max-w-2xl text-muted-foreground">
-            Najszybciej złapiesz mnie mailowo — albo przez GitHub/LinkedIn.
+            Email is the fastest way to reach me — feel free to connect on GitHub or LinkedIn.
           </p>
         </Reveal>
 
         <div className="mt-10 max-w-2xl">
           <Reveal delay={0.05}>
             <ContactCard
-              email="twojemail@example.com"
-              githubUrl="https://github.com/twojprofil"
-              linkedinUrl="https://www.linkedin.com/in/twojprofil/"
+              email={profile.email}
+              githubUrl={profile.githubUrl}
+              linkedinUrl={profile.linkedinUrl}
             />
           </Reveal>
         </div>

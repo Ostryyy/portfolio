@@ -48,7 +48,7 @@ function BentoItem({
         </div>
 
         <div className="mt-6 text-sm font-medium text-foreground/90">
-          Zobacz demo → <span className="text-muted-foreground">(YouTube)</span>
+          Watch demo → <span className="text-muted-foreground">(YouTube)</span>
         </div>
       </div>
     </Link>

@@ -1,4 +1,5 @@
 export default function robots() {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://arkadiusz.dev";
   return {
     rules: [
       {
@@ -6,6 +7,6 @@ export default function robots() {
         allow: "/",
       },
     ],
-    sitemap: "http://localhost:3000/sitemap.xml",
+    sitemap: `${baseUrl}/sitemap.xml`,
   };
 }

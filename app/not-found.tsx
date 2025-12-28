@@ -7,18 +7,18 @@ export default function NotFound() {
       <div className="mx-auto max-w-2xl px-6 py-24 text-center">
         <p className="text-sm text-muted-foreground">404</p>
         <h1 className="mt-4 text-3xl font-semibold tracking-tight md:text-5xl">
-          Nie znaleziono strony
+          Page not found
         </h1>
         <p className="mt-4 text-muted-foreground">
-          Link może być nieaktualny albo strona została przeniesiona.
+          The link may be outdated or the page has been moved.
         </p>
 
         <div className="mt-10 flex justify-center gap-3">
           <Button asChild>
-            <Link href="/">Strona główna</Link>
+            <Link href="/">Home</Link>
           </Button>
           <Button asChild variant="outline">
-            <Link href="/projects">Projekty</Link>
+            <Link href="/projects">Projects</Link>
           </Button>
         </div>
       </div>

@@ -5,11 +5,14 @@ import { usePathname } from "next/navigation";
 import * as React from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { profile } from "@/data/profile";
 
 const links = [
   { id: "tech", label: "Tech" },
-  { id: "projects", label: "Projekty" },
-  { id: "contact", label: "Kontakt" },
+  { id: "experience", label: "Experience" },
+  { id: "education", label: "Education" },
+  { id: "projects", label: "Projects" },
+  { id: "contact", label: "Contact" },
 ];
 
 export function Navbar() {
@@ -78,7 +81,7 @@ export function Navbar() {
     >
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
         <Link href="/" className="font-semibold tracking-tight">
-          Arkadiusz.dev
+          {profile.brand}
         </Link>
 
         <nav className="hidden items-center gap-6 text-sm md:flex">
@@ -114,7 +117,7 @@ export function Navbar() {
 
         <div className="flex items-center gap-2">
           <Button asChild variant="outline" className="hidden md:inline-flex">
-            <Link href="/projects">Wszystkie projekty</Link>
+            <Link href="/projects">All projects</Link>
           </Button>
         </div>
       </div>

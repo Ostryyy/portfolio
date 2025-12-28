@@ -18,6 +18,8 @@ export function Hero() {
                   <Badge variant="secondary">React</Badge>
                   <Badge variant="secondary">Next.js</Badge>
                   <Badge variant="secondary">TypeScript</Badge>
+                  <Badge variant="secondary">Python</Badge>
+                  <Badge variant="secondary">ML</Badge>
                 </div>
               </Reveal>
 
@@ -30,28 +32,34 @@ export function Hero() {
                       "animate-shimmer",
                     ].join(" ")}
                   >
-                    Frontend Developer
+                    Software Engineer
                   </span>
                   <span className="block text-muted-foreground">
-                    Nowoczesne UI, animacje i dopracowany UX.
+                    Frontend • Full-Stack • AI-Powered Applications
                   </span>
                 </h1>
               </Reveal>
 
               <Reveal delay={0.1}>
                 <p className="mt-6 max-w-2xl text-base text-muted-foreground md:text-lg">
-                  Buduję aplikacje webowe w Angular/React/Next.js. Stawiam na
-                  wydajność, czytelny kod i świetne doświadczenie użytkownika.
+                  I’m a Software Engineer building modern frontend interfaces
+                  and full-stack systems, with a strong focus on integrating AI
+                  into real-world, production-ready applications.
                 </p>
               </Reveal>
 
               <Reveal delay={0.15}>
                 <div className="mt-10 flex flex-wrap gap-3">
                   <Button asChild>
-                    <Link href="/projects">Zobacz projekty</Link>
+                    <Link href="/projects">View projects</Link>
+                  </Button>
+                  <Button asChild variant="secondary">
+                    <a href="/resume.pdf" target="_blank" rel="noreferrer">
+                      Download resume
+                    </a>
                   </Button>
                   <Button asChild variant="outline">
-                    <a href="#contact">Kontakt</a>
+                    <a href="#contact">Contact</a>
                   </Button>
                 </div>
               </Reveal>

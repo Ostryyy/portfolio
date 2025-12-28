@@ -13,15 +13,15 @@ export function ProjectsPreview() {
           <div className="flex items-end justify-between gap-4">
             <div>
               <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
-                Projekty
+                Projects
               </h2>
               <p className="mt-3 max-w-2xl text-muted-foreground">
-                Kafelki bento + każdy projekt ma stronę z demo na YouTube.
+                A mix of frontend, full-stack and ML — each project has a details page.
               </p>
             </div>
 
             <Button asChild variant="outline" className="hidden md:inline-flex">
-              <Link href="/projects">Wszystkie</Link>
+              <Link href="/projects">View all</Link>
             </Button>
           </div>
         </Reveal>
@@ -34,7 +34,7 @@ export function ProjectsPreview() {
 
         <div className="mt-8 md:hidden">
           <Button asChild variant="outline" className="w-full">
-            <Link href="/projects">Zobacz wszystkie projekty</Link>
+            <Link href="/projects">View all projects</Link>
           </Button>
         </div>
       </div>

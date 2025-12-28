@@ -4,6 +4,7 @@ import { Footer } from "@/components/site/footer";
 import { Toaster } from "sonner";
 import { Geist, Geist_Mono } from "next/font/google";
 import { HashScroll } from "@/components/site/hash-scroll";
+import { profile } from "@/data/profile";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -16,18 +17,22 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://arkadiusz.dev";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("http://localhost:3000"),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Arkadiusz — Frontend Developer",
-    template: "%s | Arkadiusz",
+    default: `${profile.name} — ${profile.role}`,
+    template: `%s | ${profile.name}`,
   },
-  description: "Frontend Developer: Angular • React • Next.js • TypeScript",
+  description:
+    "Frontend / full-stack engineer specializing in Angular, React and Next.js. Also building AI/ML projects in Python.",
   openGraph: {
-    title: "Arkadiusz — Frontend Developer",
-    description: "Portfolio: projekty, demo na YouTube, tech stack.",
+    title: `${profile.name} — ${profile.role}`,
+    description:
+      "Portfolio: featured projects (frontend, full-stack, ML) with demos and tech stacks.",
     type: "website",
-    url: "http://localhost:3000",
+    url: SITE_URL,
   },
   robots: {
     index: true,
@@ -41,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pl" className="dark" suppressHydrationWarning>
+    <html lang="en" className="dark" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >

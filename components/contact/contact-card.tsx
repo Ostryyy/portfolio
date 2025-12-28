@@ -16,10 +16,10 @@ export function ContactCard({ email, githubUrl, linkedinUrl }: Props) {
   async function copyEmail() {
     try {
       await navigator.clipboard.writeText(email);
-      toast.success("Skopiowano e-mail", { description: email });
+      toast.success("Email copied", { description: email });
     } catch {
-      toast.error("Nie udało się skopiować", {
-        description: "Skopiuj ręcznie: " + email,
+      toast.error("Copy failed", {
+        description: "Please copy manually: " + email,
       });
     }
   }
@@ -27,19 +27,19 @@ export function ContactCard({ email, githubUrl, linkedinUrl }: Props) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Kontakt</CardTitle>
+        <CardTitle>Contact</CardTitle>
       </CardHeader>
 
       <CardContent className="space-y-4">
         <p className="text-sm text-muted-foreground">
-          Najszybciej: e-mail. Możesz też złapać mnie na LinkedIn.
+          The fastest way is email. You can also find me on LinkedIn and GitHub.
         </p>
 
         <div className="flex flex-col gap-3 md:flex-row md:items-center">
           <Button asChild className="md:w-auto">
-            <a href={`mailto:${email}`} aria-label="Napisz maila">
+            <a href={`mailto:${email}`} aria-label="Send email">
               <Mail className="mr-2 h-4 w-4" />
-              Napisz maila
+              Send email
             </a>
           </Button>
 
@@ -48,10 +48,10 @@ export function ContactCard({ email, githubUrl, linkedinUrl }: Props) {
             variant="outline"
             onClick={copyEmail}
             className="md:w-auto"
-            aria-label="Skopiuj e-mail"
+            aria-label="Copy email"
           >
             <Copy className="mr-2 h-4 w-4" />
-            Kopiuj e-mail
+            Copy email
           </Button>
         </div>
 
@@ -67,10 +67,22 @@ export function ContactCard({ email, githubUrl, linkedinUrl }: Props) {
               LinkedIn
             </a>
           </Button>
+
+          <Button asChild variant="secondary">
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+            >
+              <Github className="mr-2 h-4 w-4" />
+              GitHub
+            </a>
+          </Button>
         </div>
 
         <div className="rounded-xl border bg-muted/30 p-4 text-sm">
-          <div className="text-muted-foreground">E-mail:</div>
+          <div className="text-muted-foreground">Email:</div>
           <div className="mt-1 font-medium">{email}</div>
         </div>
       </CardContent>

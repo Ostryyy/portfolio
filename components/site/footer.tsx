@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { profile } from "@/data/profile";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -9,9 +9,9 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-10">
         <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div className="space-y-1">
-            <div className="font-semibold tracking-tight">Arkadiusz.dev</div>
+            <div className="font-semibold tracking-tight">{profile.brand}</div>
             <div className="text-sm text-muted-foreground">
-              © {year} • Frontend Developer
+              © {year} • {profile.role}
             </div>
           </div>
 

@@ -1,7 +1,7 @@
 import { projects } from "@/data/project";
 
 export default function sitemap() {
-  const baseUrl = "http://localhost:3000";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://arkadiusz.dev";
 
   const routes = ["", "/projects"].map((path) => ({
     url: `${baseUrl}${path}`,
